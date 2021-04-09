@@ -28,6 +28,9 @@
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
     "react-native-gesture-handler": "^1.9.0",
+    "react-native-htmlview": "^0.16.0",
+    "react-native-keyboard-spacer": "^0.4.1",
+    "react-native-pell-rich-editor": "^1.7.0",
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.16.1",
@@ -35,6 +38,8 @@
     "react-native-svg-transformer": "^0.14.3",
     "react-native-vector-icons": "^6.6.0",
     "react-native-web": "~0.13.12",
+    "react-native-webview": "^11.3.2",
+    "react-native-zss-rich-text-editor": "^1.1.0",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
@@ -67,17 +72,6 @@
     "semi": false,
     "singleQuote": true,
     "bracketSpacing": true
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
-    ]
   },
   "lint-staged": {
     "*.{js,jsx}": [

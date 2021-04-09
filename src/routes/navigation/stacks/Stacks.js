@@ -34,8 +34,8 @@ export const HomeNavigator = () => (
       component={Home}
       options={({ navigation }) => ({
         title: 'Home',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
+        // headerLeft: () => <HeaderLeft navigation={navigation} />,
+        // headerTitle: () => <HeaderTitle />,
       })}
     />
     <Stack.Screen
@@ -43,8 +43,8 @@ export const HomeNavigator = () => (
       component={Details}
       options={({ navigation }) => ({
         title: 'Home',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
+        // headerLeft: () => <HeaderLeft navigation={navigation} />,
+        // headerTitle: () => <HeaderTitle />,
       })}
     />
   </Stack.Navigator>
@@ -61,8 +61,8 @@ export const ProfileNavigator = () => (
       component={Profile}
       options={({ navigation }) => ({
         title: 'Profile',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
+        // headerLeft: () => <HeaderLeft navigation={navigation} />,
+        // headerTitle: () => <HeaderTitle />,
       })}
     />
     <Stack.Screen
