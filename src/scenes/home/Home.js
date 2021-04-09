@@ -7,8 +7,9 @@ import {
   RichToolbar,
 } from "react-native-pell-rich-editor";
 import HTMLView from "react-native-htmlview";
+import styles from './style'
 
-const Home = () => {
+export default function Home (props) {
   const strikethrough = require("../../../assets/images/logo-lg.png"); //icon for strikethrough
   const video = require("../../../assets/images/logo-lg.png"); //icon for Addvideo
   const RichText = useRef(); //reference to the RichEditor component
@@ -87,47 +88,3 @@ const Home = () => {
     </ScrollView>
   );
 };
-
-export default Home;
-
-const styles = StyleSheet.create({
-  /********************************/
-  /* styles for html tags */
-  a: {
-    fontWeight: "bold",
-    color: "purple",
-  },
-  div: {
-    fontFamily: "monospace",
-  },
-  p: {
-    fontSize: 30,
-  },
-  /*******************************/
-  container: {
-    flex: 1,
-    marginTop: 40,
-    backgroundColor: "#F5FCFF",
-  },
-  editor: {
-    backgroundColor: "black",
-    borderColor: "black",
-    borderWidth: 1,
-  },
-  rich: {
-    minHeight: 300,
-    flex: 1,
-  },
-  richBar: {
-    height: 50,
-    backgroundColor: "#F5FCFF",
-  },
-  text: {
-    fontWeight: "bold",
-    fontSize: 20,
-  },
-  tib: {
-    textAlign: "center",
-    color: "#515156",
-  },
-});
