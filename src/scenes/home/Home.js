@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { StyleSheet, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, Modal } from "react-native";
 import {
   actions,
   defaultActions,
@@ -14,6 +14,7 @@ export default function Home (props) {
   const video = require("../../../assets/images/logo-lg.png"); //icon for Addvideo
   const RichText = useRef(); //reference to the RichEditor component
   const [article, setArticle] = useState("");
+  const [modal, setToggle] = useState(false)
 
   // this function will be called when the editor has been initialized
   function editorInitializedCallback() {
@@ -46,8 +47,37 @@ export default function Home (props) {
   }
 
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.text}>Editor</Text>
+    <View style={styles.root}>
+    <ScrollView>
+      <RichToolbar
+        style={[styles.richBar]}
+        editor={RichText}
+        disabled={false}
+        iconTint={"pink"}
+        selectedIconTint={"purple"}
+        disabledIconTint={"purple"}
+        // onPressAddImage={onPressAddImage}
+        iconSize={40}
+        actions={[
+          // "insertVideo",
+          ...defaultActions,
+          // actions.setStrikethrough,
+          actions.heading1,
+          actions.heading3,
+        ]}
+        // map icons for self made actions
+        iconMap={{
+          [actions.heading1]: ({ tintColor }) => (
+            <Text style={[styles.tib, { color: tintColor }]}>H1</Text>
+          ),
+          [actions.heading3]: ({ tintColor }) => (
+            <Text style={[styles.tib, { color: tintColor }]}>H3</Text>
+          ),
+          [actions.setStrikethrough]: strikethrough,
+          // ["insertVideo"]: video,
+        }}
+        // insertVideo={insertVideo}
+      />
       <RichEditor
         disabled={false}
         containerStyle={styles.editor}
@@ -58,33 +88,9 @@ export default function Home (props) {
         editorInitializedCallback={editorInitializedCallback}
         onHeightChange={handleHeightChange}
       />
-      <RichToolbar
-        style={[styles.richBar]}
-        editor={RichText}
-        disabled={false}
-        iconTint={"purple"}
-        selectedIconTint={"pink"}
-        disabledIconTint={"purple"}
-        onPressAddImage={onPressAddImage}
-        iconSize={40}
-        actions={[
-          "insertVideo",
-          ...defaultActions,
-          actions.setStrikethrough,
-          actions.heading1,
-        ]}
-        // map icons for self made actions
-        iconMap={{
-          [actions.heading1]: ({ tintColor }) => (
-            <Text style={[styles.tib, { color: tintColor }]}>H1</Text>
-          ),
-          [actions.setStrikethrough]: strikethrough,
-          ["insertVideo"]: video,
-        }}
-        insertVideo={insertVideo}
-      />
-      <Text style={styles.text}>Result</Text>
-      <HTMLView value={article} stylesheet={styles} />
+      {/*<Text style={styles.text}>Result</Text>
+      <HTMLView value={article} stylesheet={styles} />*/}
     </ScrollView>
+    </View>
   );
 };

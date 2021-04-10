@@ -33,7 +33,6 @@ export default styles = StyleSheet.create({
   /*******************************/
   container: {
     flex: 1,
-    marginTop: 40,
     backgroundColor: "#F5FCFF",
   },
   editor: {
